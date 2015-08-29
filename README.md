@@ -11,8 +11,12 @@ MBSA(Microsoft Baseline Security Analyzer)が出力するXMLファイルからWi
 
 ## 使い方
 アップデータを適用したい環境にMBSAをインストールした後、コマンドプロントで以下のコマンドを実行し、出力されたXMLファイルをこのソフトウエアに投げ込んでください。  
-`"C:\Program Files\Microsoft Baseline Security Analyzer 2\mbsacli.exe" /xmlout /unicode /nd /nvc > result.xml`  
-(mbsacli.exeまでのパスは環境に応じて適宜変更してください。)
+・ターゲットがインターネットに接続されている場合  
+`"C:\Program Files\Microsoft Baseline Security Analyzer 2\mbsacli.exe" /xmlout /unicode > result.xml`  
+・ターゲットがインターネットに接続されていない場合  
+`"C:\Program Files\Microsoft Baseline Security Analyzer 2\mbsacli.exe" /xmlout /unicode /nd /nvc /catalog   wsusscn2.cab > result.xml`  
+(mbsacli.exeまでのパスは環境に応じて適宜変更してください。)  
+(wsusscn2.cabはMicrosoftから最新版をダウンロードしてください。)  
 
 ## 動作環境
 .NET Framework 3.5以降 (Windows7以降には標準でインストールされています。)
